@@ -32,3 +32,8 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    
+- task: IISWebAppDeploymentOnMachineGroup@0
+  inputs:
+    WebSiteName: 'IISWEBSITE'
+    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
