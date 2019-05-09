@@ -28,12 +28,12 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    
 - task: IISWebAppDeploymentOnMachineGroup@0
   inputs:
     WebSiteName: 'IISWEBSITE'
     Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
+    
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
