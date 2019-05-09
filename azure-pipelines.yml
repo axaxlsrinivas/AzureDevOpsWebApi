@@ -34,6 +34,11 @@ steps:
         ArtifactName: 'drop'
         publishLocation: 'Container'
 
+- task: IISWebAppDeploymentOnMachineGroup@0
+  inputs:
+    WebSiteName: 'IISWEBSITE'
+    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
+
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
